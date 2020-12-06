@@ -17,11 +17,11 @@ app.get('/',(req,res)=>{
 })
 
 app.post("/add",(req,res)=>{
-    const limit=1000000;
-    const num1 = Number(req.body.num1);
-    const num2 = Number(req.body.num2);
-    const message="the sum of given two numbers";
-    const sum = num1 + num2;
+    let limit=1000000;
+    let num1 = Number(req.body.num1);
+    let num2 = Number(req.body.num2);
+    let message="the sum of given two numbers";
+    let sum = num1 + num2;
     let status="success";
     if(!num1 || !num2){
         res.send({
@@ -45,11 +45,11 @@ app.post("/add",(req,res)=>{
 });
 
 app.post("/sub",(req,res)=>{
-    const limit=1000000;
-    const num1 = Number(req.body.num1);
-    const num2 = Number(req.body.num2);
-    const message="the difference of given two numbers";
-    const diff = num1 - num2;
+    let limit=1000000;
+    let num1 = Number(req.body.num1);
+    let num2 = Number(req.body.num2);
+    let message="the difference of given two numbers";
+    let diff = num1 - num2;
     let status="success";
     if(!num1 || !num2){
         res.send({
@@ -57,11 +57,11 @@ app.post("/sub",(req,res)=>{
             message:"Invalid data types",
         });
     }
-    if(num1 < -limit || num2 < -limit || sum < -limit){
+    if(num1 < -limit || num2 < -limit || diff < -limit){
         message="Underflow";
         status="error";
     }
-    if(num1 > limit || num2 > limit || sum > limit){
+    if(num1 > limit || num2 > limit || diff > limit){
         message="Overflow";
         status="error";
     }
@@ -73,11 +73,11 @@ app.post("/sub",(req,res)=>{
 });
 
 app.post("/multiply",(req,res)=>{
-    const limit=1000000;
-    const num1 = Number(req.body.num1);
-    const num2 = Number(req.body.num2);
-    const message="The product of given numbers";
-    const mul = num1 * num2;
+    let limit=1000000;
+    let num1 = Number(req.body.num1);
+    let num2 = Number(req.body.num2);
+    let message="The product of given numbers";
+    let mul = num1 * num2;
     let status="success";
     if(!num1 || !num2){
         res.send({
@@ -85,11 +85,11 @@ app.post("/multiply",(req,res)=>{
             message:"Invalid data types",
         });
     }
-    if(num1 < -limit || num2 < -limit || sum < -limit){
+    if(num1 < -limit || num2 < -limit || mul < -limit){
         message="Underflow";
         status="error";
     }
-    if(num1 > limit || num2 > limit || sum > limit){
+    if(num1 > limit || num2 > limit || mul > limit){
         message="Overflow";
         status="error";
     }
@@ -101,11 +101,11 @@ app.post("/multiply",(req,res)=>{
 });
 
 app.post("/divide",(req,res)=>{
-    const limit=1000000;
-    const num1 = Number(req.body.num1);
-    const num2 = Number(req.body.num2);
-    const message="The division of given numbers";
-    const div = num1 / num2;
+    let limit=1000000;
+    let num1 = Number(req.body.num1);
+    let num2 = Number(req.body.num2);
+    let message="The division of given numbers";
+    let div = num1 / num2;
     let status="success";
     if(num2===0){
         res.send({
@@ -120,11 +120,11 @@ app.post("/divide",(req,res)=>{
         });
     }
     
-    if(num1 < -limit || num2 < -limit || sum < -limit){
+    if(num1 < -limit || num2 < -limit || div < -limit){
         message="Underflow";
         status="error";
     }
-    if(num1 > limit || num2 > limit || sum > limit){
+    if(num1 > limit || num2 > limit || div > limit){
         message="Overflow";
         status="error";
     }
