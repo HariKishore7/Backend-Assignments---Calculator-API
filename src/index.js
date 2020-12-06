@@ -49,7 +49,7 @@ app.post("/sub",(req,res)=>{
     const num1 = Number(req.body.num1);
     const num2 = Number(req.body.num2);
     const message="the difference of given two numbers";
-    const sum = num1 - num2;
+    const diff = num1 - num2;
     let status="success";
     if(!num1 || !num2){
         res.send({
@@ -68,7 +68,7 @@ app.post("/sub",(req,res)=>{
     res.send({
         status:status,
         message:message,
-        sum: sum,
+        difference: diff,
     });
 });
 
@@ -77,7 +77,7 @@ app.post("/multiply",(req,res)=>{
     const num1 = Number(req.body.num1);
     const num2 = Number(req.body.num2);
     const message="The product of given numbers";
-    const sum = num1 * num2;
+    const mul = num1 * num2;
     let status="success";
     if(!num1 || !num2){
         res.send({
@@ -96,7 +96,7 @@ app.post("/multiply",(req,res)=>{
     res.send({
         status:status,
         message:message,
-        sum: sum,
+        result: mul,
     });
 });
 
@@ -105,7 +105,7 @@ app.post("/divide",(req,res)=>{
     const num1 = Number(req.body.num1);
     const num2 = Number(req.body.num2);
     const message="The division of given numbers";
-    const sum = num1 / num2;
+    const div = num1 / num2;
     let status="success";
     if(num2===0){
         res.send({
@@ -131,7 +131,7 @@ app.post("/divide",(req,res)=>{
     res.send({
         status:status,
         message:message,
-        sum: sum,
+        result: div,
     });
 });
 
